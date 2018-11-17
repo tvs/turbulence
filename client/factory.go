@@ -53,5 +53,5 @@ func (f Factory) httpClient(config Config) (Client, error) {
 		Host:   net.JoinHostPort(config.Host, fmt.Sprintf("%d", config.Port)),
 	}
 
-	return NewClient(endpoint.String(), config.Username, config.Password, httpClient, f.logger), nil
+	return NewClient(endpoint.String(), config.Username, config.Password, *httpClient, f.logger), nil
 }
